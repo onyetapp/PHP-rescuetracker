@@ -11,7 +11,9 @@ class Helper {
 
     public static function base_url() {
         
-        return BASEURL . BASEPATH;
+        $basepath = rtrim(BASEPATH, '/');
+        $basepath = ($basepath == '') ? '/' : '/' . $basepath . '/';
+        return BASEURL . $basepath;
     
     }
 

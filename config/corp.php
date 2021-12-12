@@ -10,5 +10,4 @@ define("APLIKASI", "OnyetLora");
 
 // URL Define
 define("BASEPATH", "/");
-// define("BASEURL", "https://rescuetracker.id");
-define("BASEURL", "http://localhost:8100");
+define("BASEURL", "https://rescuetracker.id");

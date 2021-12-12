@@ -21,11 +21,11 @@ Route::add('/', function() {
 
     if (empty(@$_SESSION['user'])) {
         
-        header("location: /login");
+        header("location: ". Helper::base_url() ."login");
     
     } else {
 
-        header("location: /dashboard");
+        header("location: ". Helper::base_url() ."dashboard");
     
     }
 
@@ -41,7 +41,7 @@ Route::add('/login', function() {
     
     } else {
 
-        header("location: /dashboard");
+        header("location: ". Helper::base_url() ."dashboard");
     
     }
 
@@ -54,7 +54,7 @@ Route::add('/dashboard', function() {
 
     if (empty(@$_SESSION['user'])) {
         
-        header("location: /login");
+        header("location: ". Helper::base_url() ."login");
     
     } else {
 
@@ -67,7 +67,7 @@ Route::add('/dashboard', function() {
 Route::add('/logout', function() {
 
     session_destroy();
-    header("location: /login");
+    header("location: ". Helper::base_url() ."login");
 
 });
 
@@ -79,7 +79,7 @@ Route::add('/login/exec', function() {
     if ($username == 'admin' && $password == 'Tracker123!') {
 
         $_SESSION['user'] = "admin";
-        header("location: /");
+        header("location: ". Helper::base_url() ."dashboard");
 
     } else {
 

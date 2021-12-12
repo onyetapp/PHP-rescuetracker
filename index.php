@@ -123,8 +123,9 @@ Route::add('/api/v1/device/record', function() {
     if (isset($data['dev_id']) && isset($data['counter']) && isset($data['latitude']) && isset($data['longitude']) && isset($data['rssi']) && isset($data['snr'])) {
 
         $id = $data['dev_id'];
+        $loraStation = (isset($data['lora_station']) ? $data['lora_station'] : '');
         $appID = (isset($data['app_id'])) ? $data['app_id'] : 'trackingpendaki';
-        $conn->executeStatement("INSERT INTO ittp_pendaki_record(app_id, dev_id, hardware_serial, counter, payload, rssi, snr, latitude, longitude) VALUES('". $appID ."', '". $id ."', '". $id ."', ". $data['counter'] .", '". json_encode($data) ."', ". $data['rssi'] .", ". $data['snr'] .", ". $data['latitude'] .", ". $data['longitude'] .")");
+        $conn->executeStatement("INSERT INTO ittp_pendaki_record(app_id, dev_id, hardware_serial, counter, payload, rssi, snr, latitude, longitude, lora_station) VALUES('". $appID ."', '". $id ."', '". $id ."', ". $data['counter'] .", '". json_encode($data) ."', ". $data['rssi'] .", ". $data['snr'] .", ". $data['latitude'] .", ". $data['longitude'] .", '". $loraStation ."')");
         echo json_encode(array('status' => 'success'));
 
     } else {

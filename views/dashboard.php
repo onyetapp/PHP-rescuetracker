@@ -47,6 +47,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
             //  Variabel berisi properti tipe peta
             var mapOptions = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
+                center: { lat: -7.4346549, lng: 109.2500883 },
                 zoom: 16
             }
             // Pembuatan peta
@@ -102,7 +103,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
             }
 
             $query = $conn->fetchAllAssociative("SELECT * FROM ittp_pendaki_record ".$sWhere);
-
+                
             foreach($query as $key => $row) {
 
                 $nama = $row['dev_id'].
@@ -113,7 +114,6 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
                 echo "addMarker($lat, $long, '$nama');\n";
 
             }
-
             //echo "addMarker(-7.4302745, 109.1994039, 'aaa')";
             ?>
             // Proses membuat marker

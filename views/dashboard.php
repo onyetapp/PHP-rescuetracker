@@ -48,7 +48,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
             var mapOptions = {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
                 center: { lat: -7.4346549, lng: 109.2500883 },
-                zoom: 16
+                zoom: 8
             }
             // Pembuatan peta
             var peta = new google.maps.Map(document.getElementById('mapid'), mapOptions);

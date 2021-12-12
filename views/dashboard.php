@@ -36,7 +36,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
     </style>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgf-uc9Hg8NWEGT57EcA9yihVYSonYyT8&callback=initialize"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwYVoe4ngFTq94T6UYJQKzX0D8UzQbDY&callback=initialize"
         async defer></script>
     <script type="text/javascript">
         var marker;

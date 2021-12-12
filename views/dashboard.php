@@ -36,7 +36,7 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
     </style>
 
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiwYVoe4ngFTq94T6UYJQKzX0D8UzQbDY&callback=initialize"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgf-uc9Hg8NWEGT57EcA9yihVYSonYyT8&callback=initialize"
         async defer></script>
     <script type="text/javascript">
         var marker;
@@ -105,28 +105,28 @@ defined('APLIKASI') or exit('Anda tidak dizinkan mengakses langsung script ini!'
 
             foreach($query as $key => $row) {
 
-                    $nama = $row['dev_id'].
-                    '<br/>'.$row['hardware_serial'].
-                    '<br/>'.$row['time'];;
-                    $lat = $row["latitude"];
-                    $long = $row["longitude"];
-                    echo "addMarker($lat, $long, '$nama');\n";
+                $nama = $row['dev_id'].
+                '<br/>'.$row['hardware_serial'].
+                '<br/>'.$row['time'];;
+                $lat = $row["latitude"];
+                $long = $row["longitude"];
+                echo "addMarker($lat, $long, '$nama');\n";
 
-                }
+            }
 
-                //echo "addMarker(-7.4302745, 109.1994039, 'aaa')";
-                ?>
-                // Proses membuat marker
-                function addMarker(lat, lng, info) {
-                    var lokasi = new google.maps.LatLng(lat, lng);
-                    bounds.extend(lokasi);
-                    var marker = new google.maps.Marker({
-                        map: peta,
-                        position: lokasi
-                    });
-                    peta.fitBounds(bounds);
-                    bindInfoWindow(marker, peta, infoWindow, info);
-                }
+            //echo "addMarker(-7.4302745, 109.1994039, 'aaa')";
+            ?>
+            // Proses membuat marker
+            function addMarker(lat, lng, info) {
+                var lokasi = new google.maps.LatLng(lat, lng);
+                bounds.extend(lokasi);
+                var marker = new google.maps.Marker({
+                    map: peta,
+                    position: lokasi
+                });
+                peta.fitBounds(bounds);
+                bindInfoWindow(marker, peta, infoWindow, info);
+            }
             // Menampilkan informasi pada masing-masing marker yang diklik
             function bindInfoWindow(marker, peta, infoWindow, html) {
                 google.maps.event.addListener(marker, 'click', function () {

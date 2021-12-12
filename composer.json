@@ -1,0 +1,17 @@
+{
+    "name": "onyet/rescuetracker",
+    "description": "Aplikasi Dashboard Rescue Tracker Indonesia",
+    "type": "project",
+    "require": {
+        "php-curl-class/php-curl-class": "^9.5",
+        "doctrine/dbal": "^3.2",
+        "intervention/image": "^2.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OnyetCorp",
+            "email": "onyetcorp@gmail.com"
+        }
+    ]
+}
